@@ -1,8 +1,12 @@
 # teleportHQ Vision API
 ![alt text](https://i.imgur.com/aOGNl7K.jpg "teleportHQ Vision API")
-**teleportHQ Vision API** is a computer vision API specifically trained for **detecting atomic UI elements in pictures** of hand-drawn wireframes (as seen in the picture above).
+**teleportHQ Vision API** is a computer vision API specifically trained for **detecting atomic UI elements in pictures** of hand-drawn wireframes (as seen in the picture above). It uses an architecture based on [Resnet101](https://arxiv.org/abs/1512.03385) for extracting features and [Faster R-CNN](https://arxiv.org/abs/1506.01497) for bounding-box proposals. 
 
-The list of elements it can distinguish: `paragraph, label, header, button, checkbox, radiobutto, rating, toggle, dropdown, listbox, textarea, textinput, datepicker, stepperinput, slider, progressbar, image, video`.
+The machine learning model was built and trained using [TensorFlow](https://github.com/tensorflow/tensorflow).
+
+List of elements it can distinguish: `paragraph, label, header, button, checkbox, radiobutto, rating, toggle, dropdown, listbox, textarea, textinput, datepicker, stepperinput, slider, progressbar, image, video`.
+
+The API is currently in **closed alpha**, but feel free to [contact us](#how-do-i-get-a-teleport-token) if you want early access.
 ## Using the Vision API
 ### Request
 Send all requests to the API endpoint (base url): `https://europe-west1-croapp-dev.cloudfunctions.net/visionApiMiddleware`
@@ -14,6 +18,9 @@ The body of the request is a json with two keys: `image` and `threshold`.
 * `threshold` is an *optional* parameter. **Default** value is `0.1`. The detection model outputs a confidence score for each detection (between 0 and 1) and won't include in the response detections with confidence lower than this threshold.
 
 Request body example:
+
+<img src="https://i.imgur.com/eF9KN8U.jpg" width="300" height="300">
+
 ```
 {
     "image": "https://i.imgur.com/eF9KN8U.jpg", 
@@ -72,6 +79,7 @@ The `detectionClass` to `detectionString` mapping is done according to this dict
 ```
 
 #### Response example
+Full response [here](https://gist.github.com/raulincze/e285bec80178771cbfdf2fbbd0d6bc0b).
 ```
 [
     {
@@ -109,5 +117,6 @@ The `detectionClass` to `detectionString` mapping is done according to this dict
     }
 ]
 ```
+
 ## How do I get a Teleport-Token?
 If you are interested in using this API, feel free to get in touch with us via [email](mailto:paul.brie@teleporthq.io), [twitter](https://twitter.com/TeleportHQio) or [LinkedIn](https://www.linkedin.com/company/teleporthq/). 
