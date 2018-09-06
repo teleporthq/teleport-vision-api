@@ -40,7 +40,7 @@ If your request is a valid one, you will recieve back a json with the following 
 ```
 [
     {
-        "box": [x, y, width, height],
+        "box": [y, x, height, width],
         "detectionClass": numeric_label,
         "detectionString": string_label,
         "score": confidence_rating
