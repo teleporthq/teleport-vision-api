@@ -84,36 +84,36 @@ Full response [here](https://gist.github.com/raulincze/e285bec80178771cbfdf2fbbd
 [
     {
         "box": [
-            0.161091,
-            0.524945,
-            0.714086,
-            0.783918
+            0.144408,
+            0.521686,
+            0.548181,
+            0.276308
         ],
         "detectionClass": 17,
         "detectionString": "image",
-        "score": 0.999926
+        "score": 0.999999
     },
     {
         "box": [
-            0.332949,
-            0.203727,
-            0.571151,
-            0.459328
-        ],
-        "detectionClass": 11,
-        "detectionString": "textarea",
-        "score": 0.999782
-    },
-    {
-        "box": [
-            0.885467,
-            0.332858,
-            0.952213,
-            0.443467
+            0.886546,
+            0.333103,
+            0.06273400000000007,
+            0.11624700000000004
         ],
         "detectionClass": 4,
         "detectionString": "button",
-        "score": 0.998915
+        "score": 0.989777
+    },
+    {
+        "box": [
+            0.252631,
+            0.126722,
+            0.04488399999999998,
+            0.066244
+        ],
+        "detectionClass": 2,
+        "detectionString": "label",
+        "score": 0.98929
     }
 ]
 ```
