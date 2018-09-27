@@ -14,7 +14,7 @@ Send all requests to the API endpoint: `https://api.vision.teleporthq.io/detecti
 Make sure to add a `Content-Type` key with the value `application/json` and a `Teleport-Token` key with the key provided by us.
 #### Request body
 The body of the request is a json with two keys: `image` and `threshold`.
-* `image` is a **required** string parameter that denotes the direct url to a jpg or png image.
+* `image` is a **required** string parameter that denotes the direct url to a publicly available jpg or png image.
 * `threshold` is an *optional* parameter. **Default** value is `0.1`. The detection model outputs a confidence score for each detection (between 0 and 1) and won't include in the response detections with confidence lower than this threshold.
 
 Request body example:
@@ -48,7 +48,7 @@ If your request is a valid one, you will recieve back a json with the following 
     ...
 ]
 ```
-The json contains a list of objects, each one of this objects corresponding to a detected atomic UI element in the image sent in the request.
+The json contains a list of objects, each one of this objects corresponding to a detected atomic UI element in the image sent in the request. All of the keys will appear in all of the objects in your response array.
 * `box` contains the coordinates of the bounding box surrounding the detected element. `x` and `y` are the coordinates of the top left corner of the box and `width` and `height` are self explanatory. All coordinates are **normalized between [0, 1]** where `(0,0)` is the top left corner of your image and `(1, 1)` is the bottom right corner. In other words, if you want to get the pixel coordinates you have to multiply `x` and `width` with the width of your image and `y` and `height` with the height of your image.
 * `detectionClass` is the numeric class of the detection.
 * `detectionString` is the human-readable label of the detection.
