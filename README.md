@@ -1,4 +1,6 @@
-# teleportHQ Vision API
+![Alt text](https://raw.githubusercontent.com/teleporthq/teleport-lib-js/master/logo50.png "TeleportHQ")
+
+# Vision API
 ![alt text](https://i.imgur.com/aOGNl7K.jpg "teleportHQ Vision API")
 **teleportHQ Vision API** is a computer vision API specifically trained for **detecting atomic UI elements in pictures** of hand-drawn wireframes (as seen in the picture above). It uses an architecture based on [Resnet101](https://arxiv.org/abs/1512.03385) for extracting features and [Faster R-CNN](https://arxiv.org/abs/1506.01497) for bounding-box proposals. 
 
