@@ -121,4 +121,4 @@ Full response [here](https://gist.github.com/raulincze/e285bec80178771cbfdf2fbbd
 ```
 
 ## How do I get a Teleport-Token?
-If you are interested in using this API, feel free to get in touch with us via [email](mailto:paul.brie@teleporthq.io), [twitter](https://twitter.com/TeleportHQio) or [LinkedIn](https://www.linkedin.com/company/teleporthq/). 
+If you are interested in using this API, feel free to get in touch with us via the following [form](https://docs.google.com/forms/d/e/1FAIpQLSdLzIL3pnsXZeJW2-S9c064K-I-M-Q-mhpfxuLrXzJOuuRrkw/viewform). 
