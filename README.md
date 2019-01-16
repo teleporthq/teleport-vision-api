@@ -11,7 +11,7 @@ List of elements it can distinguish: `paragraph, label, header, button, checkbox
 The API is currently in **closed alpha**, but feel free to [contact us](#how-do-i-get-a-teleport-token) if you want early access.
 ## Using the Vision API
 ### Request
-Send all requests to the API endpoint: `https://api.vision.teleporthq.io/detection`
+Send all requests to the API endpoint: `https://api.vision.teleporthq.io/v1/detection`
 #### Request header
 Make sure to add a `Content-Type` key with the value `application/json` and a `Teleport-Token` key with the key provided by us.
 #### Request body
@@ -33,7 +33,7 @@ Request body example:
 ```
 curl -d '{"image": "https://i.imgur.com/eF9KN8U.jpg", "threshold": 0.5}' \
      -H "Teleport-Token: 123" -H "Content-Type: application/json" \ 
-     -X POST https://api.vision.teleporthq.io/detection
+     -X POST https://api.vision.teleporthq.io/v1/detection
 ```
 
 ### Response
