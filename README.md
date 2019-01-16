@@ -31,9 +31,14 @@ Request body example:
 ```
 #### Request example
 ```
-curl -d '{"image": "https://i.imgur.com/eF9KN8U.jpg", "threshold": 0.5}' \
-     -H "Teleport-Token: 123" -H "Content-Type: application/json" \ 
-     -X POST https://api.vision.teleporthq.io/v1/detection
+curl \
+  -X POST https://api.vision.teleporthq.io/v1/detection \
+  -H 'Content-Type: application/json' \
+  -H 'Teleport-Token: your_token' \
+  -d '{ 
+    "image": "https://i.imgur.com/eF9KN8U.jpg",
+    "threshold": 0.5 
+  }'
 ```
 
 ### Response
