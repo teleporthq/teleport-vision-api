@@ -1,7 +1,7 @@
 ![Alt text](https://raw.githubusercontent.com/teleporthq/teleport-lib-js/master/logo50.png "TeleportHQ")
 
 ## Vision API
-![alt text](https://i.imgur.com/aOGNl7K.jpg "teleportHQ Vision API")
+![alt text](https://i.imgur.com/K3ut2Dv.jpg "teleportHQ Vision API")
 **teleportHQ Vision API** is a computer vision API specifically trained for **detecting atomic UI elements in pictures** of hand-drawn wireframes (as seen in the picture above). It uses an architecture based on [Resnet101](https://arxiv.org/abs/1512.03385) for extracting features and [Faster R-CNN](https://arxiv.org/abs/1506.01497) for bounding-box proposals. 
 
 The machine learning model was built and trained using [TensorFlow](https://github.com/tensorflow/tensorflow).
@@ -9,9 +9,16 @@ The machine learning model was built and trained using [TensorFlow](https://gith
 List of elements it can distinguish: `paragraph, label, header, button, checkbox, radiobutto, rating, toggle, dropdown, listbox, textarea, textinput, datepicker, stepperinput, slider, progressbar, image, video`.
 
 The API is currently in **closed alpha**, but feel free to [contact us](#how-do-i-get-a-teleport-token) if you want early access.
+
+## Guideline
+We had to decide on some conventions to obtain better results, you can learn more [in this blog post](https://teleporthq.io/blog/enforcing-convention-for-wireframe-object-detection/).
+
+![alt text](https://teleporthq.io/static/blog/enforcing-convention/scan.jpg "Vision API guidelines")
+
+
 ## Using the Vision API
 ### Request
-Send all requests to the API endpoint: `https://api.vision.teleporthq.io/v1/detection`
+Send all requests to the API endpoint: `https://api.vision.teleporthq.io/v2/detection`
 #### Request header
 Make sure to add a `Content-Type` key with the value `application/json` and a `Teleport-Token` key with the key provided by us.
 #### Request body
@@ -21,22 +28,22 @@ The body of the request is a json with two keys: `image` and `threshold`.
 
 Request body example:
 
-<img src="https://i.imgur.com/eF9KN8U.jpg" width="300" height="300">
+<img src="https://i.imgur.com/HzTWzLS.jpg" width="300" height="300">
 
 ```
 {
-    "image": "https://i.imgur.com/eF9KN8U.jpg", 
+    "image": "https://i.imgur.com/HzTWzLS.jpg", 
     "threshold": 0.5
 }
 ```
 #### Request example
 ```
 curl \
-  -X POST https://api.vision.teleporthq.io/v1/detection \
+  -X POST https://api.vision.teleporthq.io/v2/detection \
   -H 'Content-Type: application/json' \
   -H 'Teleport-Token: your_token' \
   -d '{ 
-    "image": "https://i.imgur.com/eF9KN8U.jpg",
+    "image": "https://i.imgur.com/HzTWzLS.jpg",
     "threshold": 0.5 
   }'
 ```
@@ -68,6 +75,78 @@ The `detectionClass` to `detectionString` mapping is done according to this dict
     2: "label",
     3: "header",
     4: "button",
+    5: "image",
+    6: "linebreak",
+    7: "container",
+    8: "link",
+    9: "textinput",
+    10: "dropdown
+    11: "checkbox",
+    12: "radiobutton",
+    13: "ratting",
+    14: "toggle",
+    15: "textarea",
+    16: "datepicker",
+    17: "stepperinput",
+    18: "slider",
+    19: "video",
+    20: "table",
+    21: "list"
+}
+```
+
+#### Response example
+Full response [here](https://gist.github.com/DimitriF/986de27fdc5c849696719b8543ca8d35).
+```
+[
+    {
+        "box": [
+            0.06640399247407913,
+            0.18573421239852905,
+            0.0626835897564888,
+            0.43779563903808594
+        ],
+        "detectionClass": 15,
+        "detectionString": "header",
+        "score": 0.995826005935669
+    },
+    {
+        "box": [
+            0.16810636222362518,
+            0.18520960211753845,
+            0.04797615110874176,
+            0.17563629150390625
+        ],
+        "detectionClass": 16,
+        "detectionString": "button",
+        "score": 0.9924671053886414
+    },
+    {
+        "box": [
+            0.8350381255149841,
+            0.5098391771316528,
+            0.05998152494430542,
+            0.23138082027435303
+        ],
+        "detectionClass": 16,
+        "detectionString": "button",
+        "score": 0.9921296238899231
+    }
+]
+```
+
+## Previous version
+
+The previous version of the API is still available at this end point:
+`https://api.vision.teleporthq.io/v1/detection`
+
+The `detectionClass` to `detectionString` mapping for this previous version is done according to this dictionary:
+```
+{
+    1: "paragraph",
+    2: "label",
+    3: "header",
+    4: "button",
     5: "checkbox",
     6: "radiobutton",
     7: "rating",
@@ -83,46 +162,6 @@ The `detectionClass` to `detectionString` mapping is done according to this dict
     17: "image",
     18: "video"
 }
-```
-
-#### Response example
-Full response [here](https://gist.github.com/raulincze/e285bec80178771cbfdf2fbbd0d6bc0b).
-```
-[
-    {
-        "box": [
-            0.144408,
-            0.521686,
-            0.548181,
-            0.276308
-        ],
-        "detectionClass": 17,
-        "detectionString": "image",
-        "score": 0.999999
-    },
-    {
-        "box": [
-            0.886546,
-            0.333103,
-            0.06273400000000007,
-            0.11624700000000004
-        ],
-        "detectionClass": 4,
-        "detectionString": "button",
-        "score": 0.989777
-    },
-    {
-        "box": [
-            0.252631,
-            0.126722,
-            0.04488399999999998,
-            0.066244
-        ],
-        "detectionClass": 2,
-        "detectionString": "label",
-        "score": 0.98929
-    }
-]
 ```
 
 ## How do I get a Teleport-Token?
