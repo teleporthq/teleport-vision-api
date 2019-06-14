@@ -71,27 +71,27 @@ The json contains a list of objects, each one of this objects corresponding to a
 The `detectionClass` to `detectionString` mapping is done according to this dictionary:
 ```
 {
-    1: "paragraph",
-    2: "label",
-    3: "header",
-    4: "button",
-    5: "image",
-    6: "linebreak",
-    7: "container",
-    8: "link",
-    9: "textinput",
-    10: "dropdown
-    11: "checkbox",
-    12: "radiobutton",
-    13: "ratting",
-    14: "toggle",
-    15: "textarea",
-    16: "datepicker",
-    17: "stepperinput",
-    18: "slider",
-    19: "video",
-    20: "table",
-    21: "list"
+    1: 'paragraph',
+    2: 'dropdown',
+    3: 'checkbox',
+    4: 'radiobutton',
+    5: 'rating',
+    6: 'toggle',
+    7: 'textarea',
+    8: 'datepicker',
+    9: 'stepperinput',
+    10: 'slider',
+    11: 'video',
+    12: 'label',
+    13: 'table',
+    14: 'list',
+    15: 'header',
+    16: 'button',
+    17: 'image',
+    18: 'linebreak',
+    19: 'container',
+    20: 'link',
+    21: 'textinput'
 }
 ```
 
