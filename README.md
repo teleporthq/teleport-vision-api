@@ -11,9 +11,9 @@ List of elements it can distinguish: `paragraph, label, header, button, checkbox
 The API is currently in **closed alpha**, but feel free to [contact us](#how-do-i-get-a-teleport-token) if you want early access.
 
 ## Guideline
-We had to decide on some conventions to obtain better results, you can learn more [in this blog post](https://teleporthq.io/blog/enforcing-convention-for-wireframe-object-detection/).
+We had to decide on some conventions to obtain better results, you can learn more [in this blog post](https://teleporthq.io/blog-enforcing-convention-for-wireframe-object-detection).
 
-![alt text](https://teleporthq.io/static/blog/enforcing-convention/scan.jpg "Vision API guidelines")
+![alt text](https://teleporthq.io/playground_assets/scan0.jpg "Vision API guidelines")
 
 
 ## Using the Vision API
