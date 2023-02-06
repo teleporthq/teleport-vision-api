@@ -6,7 +6,7 @@
 
 The machine learning model was built and trained using [TensorFlow](https://github.com/tensorflow/tensorflow).
 
-List of elements it can distinguish: `paragraph, label, header, button, checkbox, radiobutto, rating, toggle, dropdown, listbox, textarea, textinput, datepicker, stepperinput, slider, progressbar, image, video`.
+List of elements it can distinguish: `paragraph, label, header, button, checkbox, radiobutton, rating, toggle, dropdown, listbox, textarea, textinput, datepicker, stepperinput, slider, progressbar, image, video`.
 
 The API is currently in **closed alpha**, but feel free to [contact us](#how-do-i-get-a-teleport-token) if you want early access.
 
